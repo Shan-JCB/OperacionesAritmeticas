@@ -6,7 +6,10 @@ def mcd(a, b):
 def ingresar_numero_positivo(mensaje):
     while True:
         try:
-            num = int(input(mensaje))
+            num = input(mensaje)
+            if not num.isdigit():
+                raise ValueError("No letras. Por favor, ingresa un número natural positivo.")
+            num = int(num)
             if num <= 0:
                 raise ValueError("Por favor, ingresa un número natural positivo.")
             return num
